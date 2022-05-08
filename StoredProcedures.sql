@@ -17,3 +17,19 @@ BEGIN
     ORDER BY 
         product_name;
 END;
+EXEC uspProductList;
+------------------Modify stored procedure-------------
+ ALTER PROCEDURE uspProductList
+    AS
+    BEGIN
+        SELECT 
+            product_name, 
+            list_price
+        FROM 
+            production.products
+        ORDER BY 
+            list_price 
+			 END;
+----delete stored procedure -------------
+DROP PROCEDURE uspProductList;
+
